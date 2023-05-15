@@ -71,6 +71,7 @@ public class formDiagnosa extends javax.swing.JFrame {
         jCheckBox37 = new javax.swing.JCheckBox();
         jCheckBox38 = new javax.swing.JCheckBox();
         btnDiagnosa = new javax.swing.JButton();
+        tf_hasilDiagnosis = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -236,6 +237,13 @@ public class formDiagnosa extends javax.swing.JFrame {
             }
         });
 
+        tf_hasilDiagnosis.setText("JENIS PENYAKIT");
+        tf_hasilDiagnosis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_hasilDiagnosisActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -292,7 +300,7 @@ public class formDiagnosa extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jCheckBox30)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnDiagnosa, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(89, 89, 89))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -320,9 +328,14 @@ public class formDiagnosa extends javax.swing.JFrame {
                             .addComponent(jCheckBox29))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(127, 127, 127)
-                .addComponent(jLabel1)
-                .addGap(89, 89, 89))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(127, 127, 127)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(186, 186, 186)
+                        .addComponent(tf_hasilDiagnosis, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(89, 189, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -396,7 +409,9 @@ public class formDiagnosa extends javax.swing.JFrame {
                     .addComponent(jCheckBox20)
                     .addComponent(jCheckBox30)
                     .addComponent(btnDiagnosa, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addComponent(tf_hasilDiagnosis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -474,9 +489,46 @@ public class formDiagnosa extends javax.swing.JFrame {
 
     private void btnDiagnosaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDiagnosaActionPerformed
         // TODO add your handling code here:
+        String namaPenyakit = "";
+
+       //1
+        if(jCheckBox3.isSelected()==true&&jCheckBox16.isSelected()==true){
+            namaPenyakit = "100% CONTRACT ULCERS";
+        }
+        
+        //2
+        if(jCheckBox3.isSelected()==true&&jCheckBox19.isSelected()==true){
+            namaPenyakit = "100% ABAES PARAFALINGEAL";
+        }
+        
+        //3
+        if(jCheckBox1.isSelected()==true&&jCheckBox2.isSelected()==true &&
+           jCheckBox7.isSelected()==true && jCheckBox14.isSelected()==true&& 
+           jCheckBox16.isSelected()==true && jCheckBox22.isSelected()==true){
+            namaPenyakit = "100% ABAES PERITONAILER";
+        }
+        
+        //4
+        if(jCheckBox2.isSelected()==true&&jCheckBox6.isSelected()==true){
+            namaPenyakit = "100% BAROTITIS MEDIA";
+        }
+        
+        //5
+        if(jCheckBox1.isSelected()==true&&jCheckBox5.isSelected()==true &&
+           jCheckBox6.isSelected()==true && jCheckBox15.isSelected()==true&& 
+           jCheckBox25.isSelected()==true && jCheckBox29.isSelected()==true){
+            namaPenyakit = "100% DEVIASI SEPTUM";
+        }
+        
+        
+        tf_hasilDiagnosis.setText("Hasil Diagnosis adalah = "+ namaPenyakit);
         
         
     }//GEN-LAST:event_btnDiagnosaActionPerformed
+
+    private void tf_hasilDiagnosisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_hasilDiagnosisActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_hasilDiagnosisActionPerformed
 
     /**
      * @param args the command line arguments
@@ -558,6 +610,7 @@ public class formDiagnosa extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField tf_hasilDiagnosis;
     private javax.swing.JTextField tf_nama;
     private javax.swing.JTextField tf_nomor_pasien;
     // End of variables declaration//GEN-END:variables
